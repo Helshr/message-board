@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言版</title>
+</head>
+<body>
+    <h1>欢迎大家留言</h1>
+    <div class="div-show-message">
+        {% for m in messages %}
+        <li>{{m.author}}: {{m.text}}</li>
+        {% endfor %}
+    </div>
+    <form action="/add" method="post">
+        作者<input type="text" name="author">
+        留言<input type="text" name="message">
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>
